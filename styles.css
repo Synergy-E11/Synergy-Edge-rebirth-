@@ -224,3 +224,59 @@ body{background:#080909;color:#f6f4f0}
 .feature-copy .process-arrow { color: #9b6a28; }
 .feature-copy .button-outline { color: #211916; border-color: #9b806d; }
 .feature-copy .button-outline span { color: #9b6a28; }
+/* SYNERGY EDGE TECH — SERVICE STRIP FIX */
+.trust-strip {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  min-height: 72px;
+  padding: 24px 0;
+}
+
+.trust-strip > * {
+  display: none;
+}
+
+.trust-strip::before {
+  content: "BRAND IDENTITY ✳ WEB EXPERIENCES ✳ SMART AUTOMATION ✳ GROWTH SYSTEMS ✳ BRAND IDENTITY ✳ WEB EXPERIENCES ✳ SMART AUTOMATION ✳ GROWTH SYSTEMS ✳ ";
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: synergy-service-scroll 22s linear infinite;
+}
+
+@keyframes synergy-service-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Reduce excessive spacing before WHAT WE DO */
+.services-section {
+  padding-top: 72px !important;
+  padding-bottom: 90px;
+}
+
+/* Improve mobile spacing */
+@media (max-width: 760px) {
+  .trust-strip {
+    min-height: 60px;
+    padding: 20px 0;
+  }
+
+  .services-section {
+    padding-top: 55px !important;
+    padding-bottom: 65px;
+  }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .trust-strip::before {
+    animation: none;
+  }
+}
